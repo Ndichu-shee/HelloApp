@@ -5,6 +5,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiClient {
+    fun buildService(java: Class<ApiInterface>): Any {
+
+    }
+
     object ApiClient {
         var client = OkHttpClient.Builder().build()
 

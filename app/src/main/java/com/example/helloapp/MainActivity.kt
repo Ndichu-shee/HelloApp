@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
                 var editor = sharedPreferences.edit()
                 editor.putString("ACCESS_TOKEN_KEY", accessToken)
                 editor.apply()
+                val baseContext = null
                 val intent = Intent(baseContext, CoursesActivity::class.java)
                 startActivity(intent)
                 finish()

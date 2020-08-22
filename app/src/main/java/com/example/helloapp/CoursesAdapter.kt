@@ -23,7 +23,7 @@ class CoursesAdapter(var courseList: List<Course>) :
 
     override fun onBindViewHolder(holder: CoursesViewHolder, position: Int) {
         holder.rowView.tvCourseId.text = courseList[position].courseId
-        holder.rowView.tvCourseCode.text = courseList[position].courseCode
+        holder.rowView.tvDescription.text = courseList[position].courseCode
         holder.rowView.tvCourseName.text = courseList[position].courseName
         holder.rowView.tvDescription.text = courseList[position].description
         holder.rowView.tvInstructor.text = courseList[position].instructor

@@ -1,5 +1,5 @@
 package com.example.helloapp
-import androidx.appcompat.AppCompatActivity
+
 data class Courses(
     var CourseId:String,
     var CourseName:String,
