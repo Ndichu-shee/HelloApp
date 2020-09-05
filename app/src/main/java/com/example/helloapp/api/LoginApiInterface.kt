@@ -1,5 +1,6 @@
-package com.example.helloapp
+package com.example.helloapp.api
 
+import com.example.helloapp.models.LoginResponse
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.Body

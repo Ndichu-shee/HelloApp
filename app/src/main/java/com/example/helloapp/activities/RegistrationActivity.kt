@@ -1,9 +1,13 @@
-package com.example.helloapp
+package com.example.helloapp.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.helloapp.api.ApiClient
+import com.example.helloapp.api.ApiInterface
+import com.example.helloapp.R
+import com.example.helloapp.models.RegistrationResponse
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.etPassword
 import kotlinx.android.synthetic.main.activity_registration.*
@@ -43,7 +47,8 @@ class RegistrationActivity : AppCompatActivity() {
 
 
     fun registerUser(requestBody: RequestBody) {
-        var apiClient = ApiClient.buildService(ApiInterface::class.java)
+        var apiClient =
+            ApiClient.buildService(ApiInterface::class.java)
         var registrationCall = apiClient.registerStudent(requestBody)
         registrationCall.enqueue(object : Callback<RegistrationResponse> {
             override fun onFailure(call: Call<RegistrationResponse>, t: Throwable) {

@@ -1,12 +1,15 @@
-package com.example.helloapp
+package com.example.helloapp.activities
 
 import android.animation.ObjectAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ProgressBar
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.helloapp.api.ApiClient
+import com.example.helloapp.api.ApiInterface
+import com.example.helloapp.models.CoursesResponse
+import com.example.helloapp.R
 import kotlinx.android.synthetic.main.activity_courses.*
-import kotlinx.android.synthetic.main.row_course_item.*
 
 class CoursesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +27,8 @@ class CoursesActivity : AppCompatActivity() {
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
         val accessToken = sharedPreferences.getString("ACCESS_TOKEN_KEY", "")
 
-        val apiClient = ApiClient.buildService(ApiInterface::class.java)
+        val apiClient =
+            ApiClient.buildService(ApiInterface::class.java)
         val coursesCall = apiClient.getCourses("Bearer " + accessToken)
         coursesCall.enqueue(object : Callback<CoursesResponse> {
             override fun onFailure(call: Call<CoursesResponse>, t: Throwable) {

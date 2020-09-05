@@ -1,7 +1,5 @@
-package com.example.helloapp
+package com.example.helloapp.models
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import com.google.gson.annotations.SerializedName
 
 data class CoursesResponse(

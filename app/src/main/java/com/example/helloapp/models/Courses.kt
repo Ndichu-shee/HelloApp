@@ -1,4 +1,4 @@
-package com.example.helloapp
+package com.example.helloapp.models
 
 data class Courses(
     var CourseId:String,
